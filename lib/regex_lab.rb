@@ -1,24 +1,34 @@
 require 'pry'
 
 def starts_with_a_vowel?(word)
-  result = word.match(/\b[aeiou]/)
-  unless result != nil
-    return false
+  if word.match(/\A[aeiouAEIOU]/)
+    true
+  elsif word.match(/\A[^aeiouAEIOU]/)
+    false
   end
-  true
 end
 
-def words_starting_with_un_and_ending_with_ing(text)
-
-end
-
-def words_five_letters_long(text)
-end
-
-def first_word_capitalized_and_ends_with_punctuation?(text)
-
-end
-
-def valid_phone_number?(phone)
-
-end
+# def words_starting_with_un_and_ending_with_ing(text)
+#   text.scan(/\bun\w*ing\b/)
+#
+# end
+#
+# def words_five_letters_long(text)
+#   text.scan(/\b\w{5}\b/)
+# end
+#
+# def first_word_capitalized_and_ends_with_punctuation?(text)
+#   if text.match(/([[:punct:]]$)/) && text.match(/^[A-Z]/)
+#     true
+#   else
+#     false
+#   end
+# end
+#
+# def valid_phone_number?(phone)
+#   if phone.match(/\b[0-9]{10}\b|\b[0-9]{3}[[:punct:]][0-9]{3}[[:punct:]][0-9]{4}\b|\b[0-9]{3}[[:punct:]][0-9]{7}\b|\b[0-9]{3}\s[0-9]{3}\s[0-9]{4}\b/)
+#     true
+#   elsif phone.match(/\b[0-9]{8,9}\b|[a-zA-Z]|\b[0-9]{2}\b|\b[0-9]{3}[[:punct:]][0-9]{5}\b/)
+#     false
+#   end
+# end

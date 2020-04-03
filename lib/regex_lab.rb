@@ -24,29 +24,10 @@ def first_word_capitalized_and_ends_with_punctuation?(text)
   end
 end
 
-def valid_phone_number?(number)
- if number.match(/\b[0-9]{9,10}\b/)
+def valid_phone_number?(phone)
+  if phone.match(/\b[0-9]{10}\b|\b[0-9]{3}[[:punct:]][0-9]{3}[[:punct:]][0-9]{4}\b|\b[0-9]{3}[[:punct:]][0-9]{7}\b|\b[0-9]{3}\s[0-9]{3}\s[0-9]{4}\b/)
+    true
+  elsif phone.match(/\b[0-9]{8,9}\b|[a-zA-Z]|\b[0-9]{2}\b|\b[0-9]{3}[[:punct:]][0-9]{5}\b/)
+    false
+  end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# def valid_phone_number?(phone)
-#   if phone.match(/\b[0-9]{10}\b|\b[0-9]{3}[[:punct:]][0-9]{3}[[:punct:]][0-9]{4}\b|\b[0-9]{3}[[:punct:]][0-9]{7}\b|\b[0-9]{3}\s[0-9]{3}\s[0-9]{4}\b/)
-#     true
-#   elsif phone.match(/\b[0-9]{8,9}\b|[a-zA-Z]|\b[0-9]{2}\b|\b[0-9]{3}[[:punct:]][0-9]{5}\b/)
-#     false
-#   end
-# end
